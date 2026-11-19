@@ -1,0 +1,39 @@
+[
+  {
+    "query": "不想上班",
+    "relevant": [
+      "m01"
+    ]
+  },
+  {
+    "query": "开心下班",
+    "relevant": [
+      "m02"
+    ]
+  },
+  {
+    "query": "无语",
+    "relevant": [
+      "m03"
+    ]
+  },
+  {
+    "query": "谢谢",
+    "relevant": [
+      "m04"
+    ]
+  },
+  {
+    "query": "疲惫",
+    "relevant": [
+      "m01",
+      "m08"
+    ]
+  },
+  {
+    "query": "震惊猫咪",
+    "relevant": [
+      "m06"
+    ]
+  }
+]

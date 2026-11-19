@@ -1,0 +1,42 @@
+[
+  {
+    "id": "m01",
+    "text": "不想上班 打工人 疲惫",
+    "image": "private/tired.png"
+  },
+  {
+    "id": "m02",
+    "text": "开心 下班 快乐",
+    "image": "private/happy.png"
+  },
+  {
+    "id": "m03",
+    "text": "无语 白眼 沉默",
+    "image": "private/speechless.png"
+  },
+  {
+    "id": "m04",
+    "text": "谢谢 感谢 鞠躬",
+    "image": "private/thanks.png"
+  },
+  {
+    "id": "m05",
+    "text": "难过 哭泣 伤心",
+    "image": "private/sad.png"
+  },
+  {
+    "id": "m06",
+    "text": "猫咪 震惊 惊讶",
+    "image": "private/cat.png"
+  },
+  {
+    "id": "m07",
+    "text": "加油 鼓励 努力",
+    "image": "private/cheer.png"
+  },
+  {
+    "id": "m08",
+    "text": "开会 困倦 疲惫 打工",
+    "image": "private/meeting.png"
+  }
+]

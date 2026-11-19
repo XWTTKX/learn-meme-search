@@ -1,0 +1,14 @@
+{
+  "learn-nanobot": {
+    "repository": "bcefghj/learn-nanobot",
+    "commit": "740d041a52e1d50499aabc70ec5bd6ae592737d0"
+  },
+  "Chinese-CLIP": {
+    "repository": "OFA-Sys/Chinese-CLIP",
+    "commit": "31863c707501bf1605d36842f43deb78793dbc5d"
+  },
+  "StickerSearch": {
+    "repository": "oftx/StickerSearch",
+    "commit": "dd8e8bc5dd8d37804071140f85e4d3ba6059296d"
+  }
+}
