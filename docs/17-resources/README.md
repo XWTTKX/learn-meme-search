@@ -1,5 +1,11 @@
 # 17 · 资源与下一步阅读
 
+## 按问题查资料
+
+先读 [CLIP](https://arxiv.org/abs/2103.00020) 的训练目标与零样本推理，再读 [Chinese-CLIP](https://arxiv.org/abs/2211.01335) 的中文训练背景。读完画出输入和投影后的两个矩阵，自己转置做双向交叉熵。论文指标通常来自特定数据和任务；表情包的短句、网络梗、OCR 与 GIF 不能直接套结论。练完模型再读 [Faiss 索引表](https://github.com/facebookresearch/faiss/wiki/Faiss-indexes)，自己用精确 TopK 定义 ANN Recall，而不是照搬别人的索引参数。
+
+每次读源代码建议留下三行笔记：哪一层有输入输出接口、版本改动会破坏哪个假设、在自己的项目里如何验证。最后把论文、代码提交和测试数据版本记录在[来源表](../../SOURCES.md)与实验记录中。
+
 优先阅读原始仓库和论文。版本化项目入口见 [SOURCES.md](../../SOURCES.md)。
 
 - [Chinese-CLIP](https://github.com/OFA-Sys/Chinese-CLIP)：图文编码与训练实现。

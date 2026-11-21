@@ -1,5 +1,7 @@
 # 本地验证记录
 
+2026-11-21：重新运行 5 项单测、基础 demo 和 [fusion_lab.py](../scripts/fusion_lab.py)。四组融合案例跑通：语义查询中手填视觉榜贡献两个独有正例；台词查询中词法路把视觉榜第三的正例提到首位；无答案组仍可出现候选，但相关性指标返回 null。视觉榜为受控教学数据，没有用真实图片模型生成。
+
 日期：2026-11-17；环境：macOS，Python 3.9.6，CPU；无第三方包。
 
 执行：`python3 -m unittest discover -s tests -v`，5项测试通过。覆盖多正例Recall与HitRate区别、空正例、重复结果、理想NDCG、中文词法匹配与RRF去重。
