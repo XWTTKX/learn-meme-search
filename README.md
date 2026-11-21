@@ -2,6 +2,8 @@
 
 **面向大厂搜广推算法面试的学习指南：从文字检索到多模态召回、融合与评测。**
 
+**第一次读，先做 [图解案例：从「累成狗」的空结果查到融合排名](docs/worked-example/README.md)。** 跟着一条查询跑，先看词法与图文各返回什么，再用一个反例理解融合为什么会漏掉正例。看懂之后再逐章读公式。
+
 可以从[逐步读代码](docs/04-source-walkthrough/README.md)入手，再做[BM25 与 RRF 手算](docs/08-lexical-hybrid/README.md)、[CLIP 双向损失推导](docs/05-clip-learning/README.md)和[离线评测](docs/10-evaluation/README.md)。运行 `python3 scripts/fusion_lab.py`，观察台词、语义、对象和无答案四类查询如何影响融合；实际输出与后续图文实验见[实战章](docs/12-project-labs/README.md)。
 
 参考 [learn-nanobot](https://github.com/bcefghj/learn-nanobot) 的“分章节学习 → 源码走读 → 实战 → 面试”结构，重新编写领域内容。目标是做出能复现、能解释、能接受追问的个人项目。场景类似微信文字搜表情包，与微信官方实现无关联。
