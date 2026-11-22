@@ -4,7 +4,15 @@
 
 **第一次读，先做 [图解案例：从「累成狗」的空结果查到融合排名](docs/worked-example/README.md)。** 跟着一条查询跑，先看词法与图文各返回什么，再用一个反例理解融合为什么会漏掉正例。看懂之后再逐章读公式。
 
-可以从[逐步读代码](docs/04-source-walkthrough/README.md)入手，再做[BM25 与 RRF 手算](docs/08-lexical-hybrid/README.md)、[CLIP 双向损失推导](docs/05-clip-learning/README.md)和[离线评测](docs/10-evaluation/README.md)。运行 `python3 scripts/fusion_lab.py`，观察台词、语义、对象和无答案四类查询如何影响融合；实际输出与后续图文实验见[实战章](docs/12-project-labs/README.md)。
+**想跟着代码学，从「疲惫」开始：**
+
+```bash
+python3 scripts/trace_search.py '疲惫' --positive m01 --positive m08 --k 1
+```
+
+[源码走读](docs/04-source-walkthrough/README.md)会把打印出来的每个词频、IDF 和得分对应到代码，再用同一条查询演示关闭长度项如何改变排名。随后顺着 [BM25 与 RRF](docs/08-lexical-hybrid/README.md)、[CLIP](docs/05-clip-learning/README.md)、[向量索引](docs/09-vector-index/README.md)与[评测](docs/10-evaluation/README.md)理解其他分支。
+
+**想把项目跑完，读[三阶段实战](docs/12-project-labs/README.md)和[模拟面试](docs/13-interview/README.md)。** 每个阶段给出命令、预期输出与排错。词法和教学融合可用标准库完成；真实图文实验需要授权图片与模型权重。
 
 参考 [learn-nanobot](https://github.com/bcefghj/learn-nanobot) 的“分章节学习 → 源码走读 → 实战 → 面试”结构，重新编写领域内容。目标是做出能复现、能解释、能接受追问的个人项目。场景类似微信文字搜表情包，与微信官方实现无关联。
 

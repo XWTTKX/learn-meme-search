@@ -16,17 +16,27 @@ class BM25:
         self.df = Counter(t for d in self.tf for t in d)
         self.k1, self.b = k1, b
 
+    def contributions(self, terms, doc_index):
+        """Return one dictionary per matched term, using the production score."""
+        counts = self.tf[doc_index]
+        length = self.lengths[doc_index]
+        normalizer = self.k1 * (1 - self.b + self.b * length / self.avg)
+        for term in terms:
+            frequency = counts[term]
+            if frequency:
+                df = self.df[term]
+                idf = math.log(1 + (len(self.docs) - df + .5) / (df + .5))
+                tf_weight = frequency * (self.k1 + 1) / (frequency + normalizer)
+                yield {"term": term, "tf": frequency, "df": df, "idf": idf,
+                       "tf_weight": tf_weight, "score": idf * tf_weight}
+
     def search(self, query, k=10):
         if k <= 0:
             raise ValueError("k must be positive")
         out = []
-        for doc, tf, dl in zip(self.docs, self.tf, self.lengths):
-            score = 0.
-            for term in set(tokens(query)):
-                freq = tf[term]
-                if freq:
-                    idf = math.log(1 + (len(self.docs)-self.df[term]+.5)/(self.df[term]+.5))
-                    score += idf * freq*(self.k1+1)/(freq+self.k1*(1-self.b+self.b*dl/self.avg))
+        terms = tuple(dict.fromkeys(tokens(query)))
+        for index, doc in enumerate(self.docs):
+            score = sum(part["score"] for part in self.contributions(terms, index))
             if score > 0:
                 out.append((doc["id"], score))
         return sorted(out, key=lambda x:(-x[1], x[0]))[:k]
